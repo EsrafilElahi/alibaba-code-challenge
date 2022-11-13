@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ToggleMode from './ToggleMode';
 
 const Layout = (props) => {
 
@@ -6,15 +7,15 @@ const Layout = (props) => {
 
   return (
     <div>
-      <header className="w-full flex items-center justify-between shadow p-5 bg-lightModeBG dark:darkModeBG">
+      <header className="w-full flex items-center justify-between shadow p-5 bg-lightModeBG dark:bg-darkModeBG">
         <div>
-          <h1 className="font-nunito800 text-xl text-lightModeText dark:darkModeText">
+          <h1 className="font-nunito800 text-xl text-lightModeText dark:text-darkModeText">
             Where in the world?
           </h1>
         </div>
 
         <div>
-          dark mode / light mode
+          <ToggleMode />
         </div>
       </header>
       <main>
