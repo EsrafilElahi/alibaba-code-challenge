@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Layout from '@/components/Layout'
 
 const CountryDetail = () => {
   return (
@@ -6,4 +7,5 @@ const CountryDetail = () => {
   )
 }
 
+CountryDetail.getLayout = (page) => <Layout>{page}</Layout>
 export default CountryDetail
