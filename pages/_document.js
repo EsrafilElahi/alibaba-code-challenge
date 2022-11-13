@@ -9,7 +9,7 @@ class LocalizedDocument extends Document {
   }
 
   render = () => (
-    <Html dir={this.props.locale === 'en' ? 'ltr' : 'rtl'} lang={this.props.locale}>
+    <Html dir={this.props.locale === 'ar' ? 'rtl' : 'ltr'} lang={this.props.locale}>
       <Head>
         <meta name="application-name" content="alibaba code challenge" />
         <meta name="description" content="alibaba code challenge" />
