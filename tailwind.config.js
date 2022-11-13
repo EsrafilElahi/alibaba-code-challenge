@@ -29,10 +29,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        iranSansWeb: "iranSansWeb",
-        iranSansMobile: "iranSansMobile",
-        iranSansLight: "iranSansLight",
-        iranSansBold: "iranSansBold",
+        nunito300: "Nunito-300",
+        nunito600: "Nunito-600",
+        nunito800: "Nunito-800",
       },
     },
   },
