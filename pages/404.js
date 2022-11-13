@@ -9,7 +9,7 @@ function CustomNotFound() {
         <title>page not found</title>
       </Head>
       <h1>page not found !</h1>
-      <Link className="text-[#3fa9f5]" href="/">
+      <Link className="text-primary" href="/">
         go to home page
       </Link>
     </div>

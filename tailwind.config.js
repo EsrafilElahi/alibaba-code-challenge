@@ -26,6 +26,10 @@ module.exports = {
       lightModeElement: "hsl(0, 0%, 100%)",
       lightModeBG: "hsl(0, 0%, 98%)",
       lightModeInput: "hsl(0, 0%, 52%)",
+
+      // other colors
+      primary: "#3fa9f5",
+      gray: "#b1aaaa"
     },
     extend: {
       fontFamily: {
