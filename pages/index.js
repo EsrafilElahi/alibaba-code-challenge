@@ -1,14 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '@/components/Layout'
-import { FaBeer } from 'react-icons/fa';
+import Layout from '@/components/Layout';
+import axios from 'axios';
 
-export default function Home() {
+const Home = ({ data }) => {
+
+  console.log('data :', data)
+
   return (
     <div>
       <span className='text-lightModeInput'>home</span>
-      <FaBeer />
     </div>
   )
 }
 
 Home.getLayout = (page) => <Layout>{page}</Layout>
+
+export const getServerSideProps = async () => {
+  const res = await axios(`https://restcountries.com/v2/all/`)
+  const data = await res.data
+
+  if (!data) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: { data }
+  }
+}
+
+export default Home;
