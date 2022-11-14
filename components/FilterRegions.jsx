@@ -44,11 +44,11 @@ export default function FilterRegions(props) {
 
   return (
     <>
-      <div className="flex items-start justify-between flex-col">
+      <div className="flex flex-col justify-between items-start">
         <select
           name="select"
           id="select"
-          className="p-3 rounded shadow"
+          className="p-3 rounded shadow outline-0"
           value={regions.name}
           onChange={(e) => fetchCountryByRegion(e.target.value)}
         >

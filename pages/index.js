@@ -29,7 +29,7 @@ const Home = ({ data }) => {
 
 
   return (
-    <div>
+    <div className='w-full h-full'>
       <div className="py-10 px-12">
         <div className='flex justify-between'>
           <FilterSearch
@@ -50,6 +50,46 @@ const Home = ({ data }) => {
         ) : (
           <div className='px-12'>
             <span>countrie map</span>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
           </div>
         )
       }
