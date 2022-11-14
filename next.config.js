@@ -8,7 +8,7 @@ const nextConfig = {
   },
   images: {
     // config this
-    domains: [],
+    domains: ['restcountries.com', 'flagcdn.com', 'upload.wikimedia.org'],
   },
   trailingSlash: true,
   eslint: {
