@@ -14,6 +14,7 @@ module.exports = {
     fontSize: {
       lg: ['14px', '20px'],
       xl: ['16px', '24px'],
+      xxl: ['23px', '28px']
     },
     colors: {
       // dark mode
@@ -29,7 +30,8 @@ module.exports = {
 
       // other colors
       primary: "#3fa9f5",
-      gray: "#b1aaaa"
+      gray: "#b1aaaa",
+      white: "#fff"
     },
     extend: {
       fontFamily: {

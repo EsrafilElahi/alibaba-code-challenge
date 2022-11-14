@@ -3,10 +3,12 @@ import Layout from '@/components/Layout';
 import axios from 'axios';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
+import CountryItem from '@/components/CountryItem';
 
 const Home = ({ data }) => {
 
   const [countries, setCountries] = useState([])
+  const [filteredCountries, setFilteredCountries] = useState([])
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)
 
@@ -15,17 +17,19 @@ const Home = ({ data }) => {
     setSearch(searchValue)
 
     if (search) {
-      const filteredCountries = countries.filter((country) =>
+      const filtered = countries.filter((country) =>
         Object.values(country)
           .join("")
           .toLowerCase()
           .includes(searchValue.toLowerCase())
       )
-      setFilteredCountries(filteredCountries)
+      setFilteredCountries(filtered)
     } else {
       setFilteredCountries(countries)
     }
   }
+
+  const finalCountries = search.length > 0 ? filteredCountries : countries
 
 
   return (
@@ -34,7 +38,7 @@ const Home = ({ data }) => {
         <div className='flex justify-between'>
           <FilterSearch
             search={search}
-            setSearch={setSearch}
+            searchCountries={searchCountries}
           />
           <FilterRegions
             setLoading={setLoading}
@@ -48,48 +52,12 @@ const Home = ({ data }) => {
             Loading...
           </h1>
         ) : (
-          <div className='px-12'>
-            <span>countrie map</span>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
-            <p>loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf loremsdfmsdfnsdfonwdfowdifnwfwjidnfwfiwfiwf</p>
+          <div className='display flex justify-center items-center flex-wrap gap-10 px-12'>
+            {
+              finalCountries?.map(country => (
+                <CountryItem key={country.id} country={country} />
+              ))
+            }
           </div>
         )
       }
