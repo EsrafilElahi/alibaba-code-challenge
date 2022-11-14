@@ -17,7 +17,7 @@ const FilterSearch = (props) => {
         placeholder="Search for a country..."
         value={search}
         onChange={(e) => searchCountries(e.target.value)}
-        className={`w-full pl-14 py-4 p-3 rounded shadow-md border-0 placeholder-gray dark:placeholder-darkModeText outline-0 ${handleContainerDarkMode}`}
+        className={`w-full md:w-[27em] pl-14 py-4 p-3 rounded shadow-md border-0 placeholder-gray dark:placeholder-darkModeText outline-0 ${handleContainerDarkMode}`}
         autoComplete="off"
       />
     </label>
