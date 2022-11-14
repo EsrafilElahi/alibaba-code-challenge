@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
 import { BsArrowLeft } from "react-icons/bs";
@@ -113,6 +114,12 @@ export const getServerSideProps = async (context) => {
       props: { country: null, error: true }
     }
   }
+}
+
+
+CountryDetail.propTypes = {
+  country: PropTypes.object.isRequired,
+  error: PropTypes.bool.isRequired
 }
 
 export default CountryDetail

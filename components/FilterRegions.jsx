@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 
-export default function FilterRegions(props) {
+const FilterRegions = (props) => {
 
   const { setCountries, setLoading } = props
 
@@ -62,3 +63,11 @@ export default function FilterRegions(props) {
     </>
   )
 }
+
+
+FilterRegions.propTypes = {
+  setCountries: PropTypes.func,
+  setLoading: PropTypes.func,
+}
+
+export default FilterRegions;

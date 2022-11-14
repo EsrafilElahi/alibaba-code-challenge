@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { AiOutlineSearch } from "react-icons/ai";
 
 
@@ -22,6 +23,12 @@ const FilterSearch = (props) => {
       />
     </label>
   )
+}
+
+
+FilterSearch.propTypes = {
+  search: PropTypes.string,
+  searchCountries: PropTypes.func,
 }
 
 export default FilterSearch
