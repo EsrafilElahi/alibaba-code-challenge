@@ -50,14 +50,14 @@ const CountryDetail = ({ country }) => {
         </div>
       </div>
       <div className='flex flex-col md:flex-row justify-between items-center gap-10 md:gap-24'>
-        <div className='w-full flex-[1_1_45%]'>
+        <div className='w-full md:flex-[1_1_50%] lg:flex-[1_1_45%]'>
           <Image className='w-full h-full md:rounded-xl md:border-[1.5em] border-solid border-borderLight dark:border-borderDark' src={country?.flags.png} alt={country?.name} width={100} height={100} />
         </div>
-        <div className='w-full flex-[1_1_55%]'>
+        <div className='w-full md:flex-[1_1_50%] lg:flex-[1_1_55%]'>
           <div>
             <span className='text-3xl font-nunito800'>{country?.name}</span>
           </div>
-          <div className='flex flex-col md:flex-row justify-between items-start mt-5 md:mt-7'>
+          <div className='flex flex-col md:flex-row justify-start gap-28 items-start mt-5 md:mt-7'>
             <div>
               <div>
                 <span className='font-nunito600'>Native Name: </span>
@@ -95,7 +95,7 @@ const CountryDetail = ({ country }) => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col md:flex-row justify-center md:items-center xs-only:gap-3 xs-only:mt-7 xs-only:mb-12 md:mt-14'>
+          <div className='flex flex-col md:flex-row md:items-center xs-only:gap-3 xs-only:mt-7 xs-only:mb-12 md:mt-14'>
             <span className='font-nunito600 xs-only:text-xl whitespace-nowrap'>Border Countries: </span>
             <div>
               {country?.borders?.map(border => <span className={`py-1 px-8 rounded border-4 border-solid xs-only:mr-3 md:mx-3 ${countriesBorderDarkMode}`}>{border}</span>)}
