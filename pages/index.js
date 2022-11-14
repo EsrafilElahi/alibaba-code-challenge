@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import axios from 'axios';
+import axios from '@/lib/axios';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
 import CountryItem from '@/components/CountryItem';
@@ -79,7 +79,7 @@ Home.getLayout = (page) => <Layout>{page}</Layout>
 
 export const getServerSideProps = async () => {
   try {
-    const res = await axios(`https://restcountries.com/v2/all/`)
+    const res = await axios.get(`/all/`)
     const data = await res.data
 
     if (!data) {
