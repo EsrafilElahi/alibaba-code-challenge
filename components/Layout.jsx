@@ -10,9 +10,9 @@ const Layout = (props) => {
 
   return (
     <div className='w-full h-full'>
-      <header className={`w-full flex fixed top-0 right-5 items-center overflow-hidden justify-between shadow p-5 px-20 ${handleHeaderDarkMode}`}>
+      <header className={`w-full flex fixed top-0 items-center overflow-hidden justify-between shadow p-5 px-7 md:px-20 ${handleHeaderDarkMode}`}>
         <div>
-          <h1 className="font-nunito800 text-2xl pl-5">
+          <h1 className="font-nunito800 text-2xl">
             Where in the world?
           </h1>
         </div>

@@ -34,9 +34,9 @@ const Home = ({ data }) => {
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
 
   return (
-    <div className={`w-full h-full text-lg ${handleContainerDarkMode}`}>
-      <div className="py-10 px-20">
-        <div className='flex justify-between'>
+    <div className={`w-full h-full text-base ${handleContainerDarkMode}`}>
+      <div className="py-10 px-7 md:px-20">
+        <div className='flex flex-col md:flex-row gap-10 md:gap-0 justify-between'>
           <FilterSearch
             search={search}
             searchCountries={searchCountries}
@@ -53,7 +53,7 @@ const Home = ({ data }) => {
             Loading...
           </h1>
         ) : (
-          <div className='display flex justify-center items-center flex-wrap gap-24 px-20'>
+          <div className='display flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
             {
               finalCountries?.map(country => (
                 <CountryItem key={country.id} country={country} />
