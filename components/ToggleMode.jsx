@@ -1,5 +1,7 @@
-import { useState } from "react"
-import { BsMoon, BsSun } from "react-icons/bs"
+import { useState } from "react";
+import PropTypes from 'prop-types';
+import { BsMoon, BsSun } from "react-icons/bs";
+
 
 const ToggleMode = () => {
   const [darkMode, setDarkMode] = useState(false)

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
 import CountryItem from '@/components/CountryItem';
 
-const Home = ({ data, error }) => {
+const Home = (props) => {
+
+  const { data, error } = props;
 
   const [countries, setCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState([])
@@ -96,6 +99,11 @@ export const getServerSideProps = async () => {
       props: { data: null, error: true }
     }
   }
+}
+
+Home.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  error: PropTypes.bool.isRequired
 }
 
 export default Home;
