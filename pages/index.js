@@ -31,10 +31,10 @@ const Home = ({ data }) => {
 
   const finalCountries = search.length > 0 ? filteredCountries : countries
 
-  const handleDarkModeClassName = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
+  const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
 
   return (
-    <div className={`w-full h-full text-lg ${handleDarkModeClassName}`}>
+    <div className={`w-full h-full text-lg ${handleContainerDarkMode}`}>
       <div className="py-10 px-20">
         <div className='flex justify-between'>
           <FilterSearch
