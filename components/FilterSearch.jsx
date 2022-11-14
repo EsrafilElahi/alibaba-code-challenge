@@ -1,17 +1,17 @@
 import React from 'react'
 
 const FilterSearch = (props) => {
-  const { search, setSearch } = props
+  const { search, searchCountries } = props
   return (
     <div>
       <input
         type="search"
         name="search"
         // id="search"
-        placeholder="Search by country name"
+        placeholder="Search for a country..."
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-3 rounded shadow placeholder-gray lg:w-1/2 outline-0"
+        onChange={(e) => searchCountries(e.target.value)}
+        className="w-full p-3 rounded shadow placeholder-gray dark:placeholder-white outline-0"
         autoComplete="off"
       />
     </div>
