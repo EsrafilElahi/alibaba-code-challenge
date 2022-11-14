@@ -8,14 +8,16 @@ module.exports = {
   darkMode: "class",
   important: true,
   theme: {
-    screens: {
-      sm: "375px",
-      lg: "1440px",
+    screens: {     
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
     },
     fontSize: {
-      'lg': ['14px', '24px'],
-      'xl': ['16px', '32px'],
-      'xxl': ['19px', '28px'],
+      'base': ['14px', '24px'],
+      'lg': ['16px', '32px'],
+      'xl': ['19px', '28px'],
       '2xl': ['23px', '30px'],
       '3xl': ['28px', '30px'],
     },

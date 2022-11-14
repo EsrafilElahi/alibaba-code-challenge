@@ -42,13 +42,15 @@ export default function FilterRegions(props) {
     fetchCountryByRegion()
   }, [])
 
+  const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement'
+
   return (
     <>
       <div className="flex flex-col justify-between items-start">
         <select
           name="select"
           id="select"
-          className="p-3 rounded shadow outline-0"
+          className={`w-[60%] py-4 md:w-auto p-3 rounded shadow-md border-0 outline-0 text-lightModeText dark:text-darkModeText ${handleContainerDarkMode}`}
           value={regions.name}
           onChange={(e) => fetchCountryByRegion(e.target.value)}
         >
