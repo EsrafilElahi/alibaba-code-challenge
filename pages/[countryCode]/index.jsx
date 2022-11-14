@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
-import axios from 'axios';
+import axios from '@/lib/axios';
 import { BsArrowLeft } from "react-icons/bs";
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -102,7 +102,7 @@ CountryDetail.getLayout = (page) => <Layout>{page}</Layout>
 export const getServerSideProps = async (context) => {
   try {
     const countryCode = context.params.countryCode
-    const res = await axios.get(`https://restcountries.com/v2/alpha/${countryCode}`);
+    const res = await axios.get(`/alpha/${countryCode}`);
     const country = await res.data
 
     return {
