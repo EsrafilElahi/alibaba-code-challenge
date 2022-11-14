@@ -8,11 +8,11 @@ const CountryItem = (props) => {
 
   console.log(country);
 
-  const handleDarkModeClassName = 'text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement border-borderLight dark:border-borderDark'
+  const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement border-borderLight dark:border-borderDark'
 
   return (
     <Link href={`/${country?.alpha3Code}`} className='flex-[1_1_100%] lg:flex-[1_1_20%]'>
-      <div className={`rounded-2xl text-lg transition-all duration-300 border-[.6em] border-solid ${handleDarkModeClassName}`}>
+      <div className={`rounded-2xl text-lg transition-all duration-300 border-[.6em] border-solid ${handleContainerDarkMode}`}>
         <div className='w-full h-full'>
           <Image className='w-full h-full aspect-[4/3] object-cover rounded' src={country?.flag} alt={country?.name} width={100} height={100} />
         </div>
