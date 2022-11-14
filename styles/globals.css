@@ -42,4 +42,21 @@
     margin: 0;
     font-family: "Nunito-300", sans-serif;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 18px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #b1aaaa;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b1aaaa;
+    border-radius: 8px;
+  }
 }

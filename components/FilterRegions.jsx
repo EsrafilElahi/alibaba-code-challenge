@@ -34,7 +34,7 @@ export default function FilterRegions(props) {
     const res = await axios.get(`https://restcountries.com/v2/region/${region || 'Africa'}`)
     const data = await res.data
     setCountries(data)
-    console.log(data)
+    // console.log(data)
     setLoading(false)
   }
 
@@ -50,7 +50,7 @@ export default function FilterRegions(props) {
         <select
           name="select"
           id="select"
-          className={`w-[60%] py-4 md:w-auto p-3 rounded shadow-md border-0 outline-0 text-lightModeText dark:text-darkModeText ${handleContainerDarkMode}`}
+          className={`min-w-[60%] md:w-[13em] py-4 p-3 rounded shadow-md border-0 outline-0 text-lightModeText dark:text-darkModeText ${handleContainerDarkMode}`}
           value={regions.name}
           onChange={(e) => fetchCountryByRegion(e.target.value)}
         >

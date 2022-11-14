@@ -5,12 +5,15 @@ import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
 import CountryItem from '@/components/CountryItem';
 
-const Home = ({ data }) => {
+const Home = ({ data, error }) => {
 
   const [countries, setCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState([])
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)
+
+  console.log('data :', data);
+  console.log('error :', error);
 
 
   const searchCountries = (searchValue) => {
@@ -52,15 +55,21 @@ const Home = ({ data }) => {
           <h1 className="flex items-center justify-center uppercase tracking-widest pt-10 text-gray dark:text-darkModeText font-bold">
             Loading...
           </h1>
-        ) : (
-          <div className='display flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
-            {
-              finalCountries?.map(country => (
-                <CountryItem key={country.id} country={country} />
-              ))
-            }
-          </div>
-        )
+        ) :
+          error ? (
+            <h2 className="flex items-center justify-center uppercase tracking-widest pt-10 text-gray dark:text-darkModeText font-bold">
+              an error occurred !!
+            </h2>
+          ) :
+            (
+              <div className='display flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
+                {
+                  finalCountries?.map(country => (
+                    <CountryItem key={country.id} country={country} />
+                  ))
+                }
+              </div>
+            )
       }
     </div>
   )
@@ -68,18 +77,24 @@ const Home = ({ data }) => {
 
 Home.getLayout = (page) => <Layout>{page}</Layout>
 
-export const getStaticProps = async () => {
-  const res = await axios(`https://restcountries.com/v2/all/`)
-  const data = await res.data
+export const getServerSideProps = async () => {
+  try {
+    const res = await axios(`https://restcountries.com/v2/all/`)
+    const data = await res.data
 
-  if (!data) {
-    return {
-      notFound: true
+    if (!data) {
+      return {
+        notFound: true
+      }
     }
-  }
 
-  return {
-    props: { data }
+    return {
+      props: { data, error: false }
+    }
+  } catch (err) {
+    return {
+      props: { data: null, error: true }
+    }
   }
 }
 
