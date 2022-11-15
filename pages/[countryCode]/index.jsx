@@ -43,7 +43,7 @@ const CountryDetail = (props) => {
                 <div>
                   <span className='text-3xl font-nunito800'>{country?.name}</span>
                 </div>
-                <div className='flex flex-col md:flex-row justify-start gap-28 items-start mt-5 md:mt-7'>
+                <div className='flex flex-col md:flex-row justify-start lg:gap-28 items-start mt-5 md:mt-7'>
                   <div>
                     <div>
                       <span className='font-nunito600'>Native Name: </span>
@@ -81,9 +81,9 @@ const CountryDetail = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col md:flex-row md:items-center xs-only:gap-3 xs-only:mt-7 xs-only:mb-12 md:mt-14'>
+                <div className='flex flex-col md:flex-row md:items-start xs-only:gap-3 xs-only:mt-7 xs-only:mb-12 md:mt-14'>
                   <span className='font-nunito600 xs-only:text-xl whitespace-nowrap'>Border Countries: </span>
-                  <div>
+                  <div className='flex flex-wrap justify-start items-center gap-3'>
                     {country?.borders?.map((border) =>
                       <span
                         key={border}
