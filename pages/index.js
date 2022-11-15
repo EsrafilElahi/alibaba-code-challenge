@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Fuse from 'fuse.js'
 import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
@@ -62,22 +63,29 @@ const Home = (props) => {
 
   const router = useRouter();
 
+  const fuseOptions = {
+    includeScore: true,
+    // Search in `country name`
+    keys: ['name']
+  }
+
+  const fuse = new Fuse(countries, fuseOptions)
 
   const searchCountries = (searchValue) => {
     setSearch(searchValue)
 
+
     if (search) {
-      const filtered = countries.filter((country) =>
-        Object.values(country)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      )
-      setFilteredCountries(filtered)
+      const filtered = fuse.search(search)
+      const founded = []
+      filtered?.map(item => rest.push(item.item))
+
+      setFilteredCountries(founded)
     } else {
       setFilteredCountries(countries)
     }
   }
+
 
   const setDirectionAndValue = (value) => {
     if (!direction) {
@@ -97,7 +105,7 @@ const Home = (props) => {
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
 
   return (
-    <div className={`w-full h-full text-base ${handleContainerDarkMode}`}>
+    <div className={`w-full h-full text-base mb-[5em] ${handleContainerDarkMode}`}>
       <div className="py-20 px-7 md:px-20">
         <div className='flex flex-col md:flex-row gap-10 md:gap-0 justify-between'>
           <FilterSearch
@@ -132,7 +140,7 @@ const Home = (props) => {
             </h2>
           ) :
             (
-              <div className='flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
+              <div className='flex justify-center items-center flex-wrap gap-24 px-7 md:px-20 pb-8'>
                 {
                   orderedData?.map(country => (
                     <Suspense
