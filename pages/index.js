@@ -53,7 +53,7 @@ const Home = (props) => {
 
   const { data, error } = props;
 
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState(data)
   const [filteredCountries, setFilteredCountries] = useState([])
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)

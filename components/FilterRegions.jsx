@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axios from '@/lib/axios';
 import { useRouter } from "next/router";
 
 
@@ -34,11 +34,17 @@ const FilterRegions = (props) => {
 
   const fetchCountryByRegion = async (region) => {
     setLoading(true)
-    const res = await axios.get(`https://restcountries.com/v2/region/${region || 'Africa'}`)
-    const data = await res.data
-    setCountries(data)
-    router.push(`/?region=${region || 'Africa'}`, undefined, { shallow: true })
-    setLoading(false)
+    try {
+      const res = await axios.get(`/region/${region || 'Africa'}`)
+      const data = await res.data
+      setCountries(data)
+      // set filterd region store in url with shallow: true that makes change url without running data fetching methods again
+      router.push(`/?region=${region || 'Africa'}`, undefined, { shallow: true })
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+      console.log('err in fetch data :', error);
+    }
   }
 
   const router = useRouter()
