@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { useRouter } from "next/router";
 
 
 const FilterRegions = (props) => {
 
-  const { setCountries, setLoading } = props
+  const { setCountries, setLoading, } = props
 
   const regions = [
     {
@@ -35,9 +37,11 @@ const FilterRegions = (props) => {
     const res = await axios.get(`https://restcountries.com/v2/region/${region || 'Africa'}`)
     const data = await res.data
     setCountries(data)
-    // console.log(data)
+    router.push(`/?region=${region || 'Africa'}`, undefined, { shallow: true })
     setLoading(false)
   }
+
+  const router = useRouter()
 
   useEffect(() => {
     fetchCountryByRegion()
@@ -51,12 +55,14 @@ const FilterRegions = (props) => {
         <select
           name="select"
           id="select"
-          className={`min-w-[60%] md:w-[13em] py-4 p-3 rounded shadow-md border-0 outline-0 text-lightModeText dark:text-darkModeText ${handleContainerDarkMode}`}
-          value={regions.name}
+          className={`min-w-[60%] md:w-[13em] py-4 p-3 rounded cursor-pointer shadow-md border-0 outline-0 text-lightModeText dark:text-darkModeText ${handleContainerDarkMode}`}
+          value={regions?.name}
           onChange={(e) => fetchCountryByRegion(e.target.value)}
         >
-          {regions.map(region => (
-            <option key={region.id} value={region.name}>{region.name}</option>
+          {regions?.map(region => (
+            <option key={region.id} value={region.name}>
+              {region.name}
+            </option>
           ))}
         </select>
       </div>

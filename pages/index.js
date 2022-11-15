@@ -2,10 +2,42 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { useRouter } from 'next/router';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+
+const orderData = (data, value, direction) => {
+  if (direction === 'asc') {
+    return [...data].sort((a, b) => a[value] > b[value] ? 1 : -1)
+  }
+  if (direction === 'desc') {
+    return [...data].sort((a, b) => a[value] > b[value] ? -1 : 1)
+  }
+
+  return data
+}
+
+const Arrow = ({ direction }) => {
+  if (!direction) return;
+  else if (direction === 'asc') {
+    return (
+      <div className="">
+        <BiChevronUp className='w-4 h-4' />
+      </div>
+    )
+  } else {
+    return (
+      <div className="">
+        <BiChevronDown className='w-4 h-4' />
+      </div>
+    )
+  }
+}
+
 
 const CountryItem = dynamic(() => import('@/components/CountryItem'), {
   suspense: true,
@@ -19,6 +51,13 @@ const Home = (props) => {
   const [filteredCountries, setFilteredCountries] = useState([])
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)
+  const [direction, setDirection] = useState()
+  const [value, setValue] = useState('')
+
+  const router = useRouter();
+
+  console.log(router);
+
 
   const searchCountries = (searchValue) => {
     setSearch(searchValue)
@@ -36,7 +75,20 @@ const Home = (props) => {
     }
   }
 
+  const setDirectionAndValue = (value) => {
+    if (!direction) {
+      setDirection('desc')
+    } else if (direction === 'desc') {
+      setDirection('asc')
+    } else {
+      setDirection(null)
+    }
+
+    setValue(value)
+  }
+
   const finalCountries = search.length > 0 ? filteredCountries : countries
+  const orderedData = orderData(finalCountries, value, direction)
 
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
 
@@ -48,6 +100,16 @@ const Home = (props) => {
             search={search}
             searchCountries={searchCountries}
           />
+          <div className='flex gap-4'>
+            <button onClick={() => setDirectionAndValue('name')} className='flex items-center gap-2 order-btn'>
+              <span>Name</span>
+              {value === 'name' ? <Arrow direction={direction} /> : null}
+            </button>
+            <button onClick={() => setDirectionAndValue('population')} className='flex items-center gap-2 order-btn'>
+              <span>Population</span>
+              {value === 'population' ? <Arrow direction={direction} /> : null}
+            </button>
+          </div>
           <FilterRegions
             setLoading={setLoading}
             setCountries={setCountries}
@@ -68,7 +130,7 @@ const Home = (props) => {
             (
               <div className='flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
                 {
-                  finalCountries?.map(country => (
+                  orderedData?.map(country => (
                     <Suspense
                       key={country.id}
                       fallback={`Loading...`}
