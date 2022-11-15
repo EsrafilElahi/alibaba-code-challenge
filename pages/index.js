@@ -4,7 +4,12 @@ import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
-import CountryItem from '@/components/CountryItem';
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+const CountryItem = dynamic(() => import('@/components/CountryItem'), {
+  suspense: true,
+})
 
 const Home = (props) => {
 
@@ -61,10 +66,15 @@ const Home = (props) => {
             </h2>
           ) :
             (
-              <div className='display flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
+              <div className='flex justify-center items-center flex-wrap gap-24 px-7 md:px-20'>
                 {
                   finalCountries?.map(country => (
-                    <CountryItem key={country.id} country={country} />
+                    <Suspense
+                      key={country.id}
+                      fallback={`Loading...`}
+                    >
+                      <CountryItem country={country} />
+                    </Suspense>
                   ))
                 }
               </div>
