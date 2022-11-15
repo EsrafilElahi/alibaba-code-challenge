@@ -1,3 +1,4 @@
 #!/bin/sh
 
-npm run start
+
+npm start

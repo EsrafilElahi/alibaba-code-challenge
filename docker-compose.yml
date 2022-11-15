@@ -1,0 +1,22 @@
+version: '3.9'
+
+
+services:
+  ivisit-single-doctor:
+    # image: alibaba-front:latest
+    restart: unless-stopped
+    # container_name: alibaba-doctor-front
+    entrypoint: ./production_entrypoint.sh
+    
+
+    ports:
+      - ${ALIBABA_FRONT_PORT:-3001}:3000
+
+    labels:
+
+    networks:
+      # - alibaba-network
+
+networks:
+  # alibaba-network:
+  #   external: true
