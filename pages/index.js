@@ -61,7 +61,7 @@ const Home = (props) => {
   const [value, setValue] = useState('name')
 
   const router = useRouter();
-  
+
 
   const searchCountries = (searchValue) => {
     setSearch(searchValue)
