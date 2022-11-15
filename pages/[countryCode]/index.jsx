@@ -12,8 +12,6 @@ const CountryDetail = (props) => {
   const { country, error } = props
   const router = useRouter();
 
-  console.log(country)
-
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
   const countriesBorderDarkMode = 'border-borderLight2 dark:border-borderDark2 bg-lightModeBG dark:bg-darkModeElement'
   const handleBackButtonDarkMode = 'shadow-[0px_1px_10px_-3px] dark:shadow-[0px_1px_5px_6px_#1a2632]'

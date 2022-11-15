@@ -7,8 +7,6 @@ import Image from 'next/image';
 const CountryItem = (props) => {
   const { country } = props;
 
-  console.log(country);
-
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement border-borderLight dark:border-borderDark'
 
   return (
