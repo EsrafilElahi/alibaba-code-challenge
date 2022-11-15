@@ -10,6 +10,8 @@
 
 > Sorting function with ability to sort by country name and population
 
+> Has the ability to search based on Fuzzy Searching
+
 > The filter function is based on the region which query string stored in the URL and synced
 
 
@@ -29,4 +31,4 @@
 <!-- > Collect analytical project data using react-ga package -->
 
 
-##### in the end : [Project Demo](https://esrtafilelahi.com "alibaba code challenge")
+##### in the end : [Project Demo](https://esrafil-alibaba.vercel.app/ "alibaba code challenge")
