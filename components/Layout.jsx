@@ -10,8 +10,8 @@ const Layout = (props) => {
   const handleMainDarkMode = 'bg-lightModeBG dark:bg-darkModeBG'
 
   return (
-    <div className='w-full h-full'>
-      <header className={`w-full flex fixed top-0 items-center overflow-hidden justify-between shadow p-5 px-7 md:px-20 ${handleHeaderDarkMode}`}>
+    <div className={`min-h-full ${handleMainDarkMode}`}>
+      <header className={`w-full flex sticky top-0 items-center overflow-hidden justify-between shadow p-5 px-7 md:px-20 ${handleHeaderDarkMode}`}>
         <div>
           <h1 className="font-nunito800 text-2xl">
             Where in the world?
@@ -22,7 +22,7 @@ const Layout = (props) => {
           <ToggleMode />
         </div>
       </header>
-      <main className={`w-full h-full pt-[6.5em] overflow-x-hidden overflow-y-auto ${handleMainDarkMode}`}>
+      <main className={`w-full h-full ${handleMainDarkMode}`}>
         {children}
       </main>
     </div>
