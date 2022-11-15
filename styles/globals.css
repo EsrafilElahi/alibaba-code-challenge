@@ -63,6 +63,6 @@
 
 @layer components {
   .order-btn {
-    @apply px-6 rounded cursor-pointer shadow-md text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement border-0;
+    @apply px-6 py-4 xs-only:flex-[1_1_100%] rounded cursor-pointer shadow-md text-lightModeText dark:text-darkModeText bg-white dark:bg-darkModeElement border-0;
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp, BiMinus } from "react-icons/bi";
 import { useRouter } from 'next/router';
 import FilterRegions from '@/components/FilterRegions';
 import FilterSearch from '@/components/FilterSearch';
@@ -22,17 +22,23 @@ const orderData = (data, value, direction) => {
 }
 
 const Arrow = ({ direction }) => {
-  if (!direction) return;
+  if (!direction) {
+    return (
+      <div className="">
+        <BiMinus className='flex items-center w-3 h-3' />
+      </div>
+    )
+  }
   else if (direction === 'asc') {
     return (
       <div className="">
-        <BiChevronUp className='w-4 h-4' />
+        <BiChevronUp className='flex items-center w-4 h-4' />
       </div>
     )
   } else {
     return (
       <div className="">
-        <BiChevronDown className='w-4 h-4' />
+        <BiChevronDown className='flex items-center w-4 h-4' />
       </div>
     )
   }
@@ -51,8 +57,8 @@ const Home = (props) => {
   const [filteredCountries, setFilteredCountries] = useState([])
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)
-  const [direction, setDirection] = useState()
-  const [value, setValue] = useState('')
+  const [direction, setDirection] = useState(null)
+  const [value, setValue] = useState('name')
 
   const router = useRouter();
 
@@ -101,13 +107,13 @@ const Home = (props) => {
             searchCountries={searchCountries}
           />
           <div className='flex gap-4'>
-            <button onClick={() => setDirectionAndValue('name')} className='flex items-center gap-2 order-btn'>
+            <button onClick={() => setDirectionAndValue('name')} className='flex justify-between items-center gap-2 order-btn'>
               <span>Name</span>
-              {value === 'name' ? <Arrow direction={direction} /> : null}
+              {value === 'name' && <Arrow direction={direction} />}
             </button>
-            <button onClick={() => setDirectionAndValue('population')} className='flex items-center gap-2 order-btn'>
+            <button onClick={() => setDirectionAndValue('population')} className='flex justify-between items-center gap-2 order-btn'>
               <span>Population</span>
-              {value === 'population' ? <Arrow direction={direction} /> : null}
+              {value === 'population' && <Arrow direction={direction} />}
             </button>
           </div>
           <FilterRegions
