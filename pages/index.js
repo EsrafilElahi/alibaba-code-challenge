@@ -15,10 +15,6 @@ const Home = (props) => {
   const [search, setSearch] = useState("")
   const [loading, setLoading] = useState(null)
 
-  console.log('data :', data);
-  console.log('error :', error);
-
-
   const searchCountries = (searchValue) => {
     setSearch(searchValue)
 

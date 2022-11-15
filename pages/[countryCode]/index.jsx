@@ -13,6 +13,8 @@ const CountryDetail = (props) => {
   const { country, error } = props
   const router = useRouter();
 
+  console.log(country)
+
   const handleContainerDarkMode = 'text-lightModeText dark:text-darkModeText bg-lightModeBG dark:bg-darkModeBG'
   const countriesBorderDarkMode = 'border-borderLight2 dark:border-borderDark2 bg-lightModeBG dark:bg-darkModeElement'
   const handleBackButtonDarkMode = 'shadow-[0px_1px_10px_-3px] dark:shadow-[0px_1px_5px_6px_#1a2632]'
@@ -38,7 +40,7 @@ const CountryDetail = (props) => {
             </div>
             <div className='flex flex-col md:flex-row justify-between items-center gap-10 md:gap-24'>
               <div className='w-full md:flex-[1_1_50%] lg:flex-[1_1_45%]'>
-                <Image className='w-full h-full md:rounded-xl md:border-[1.5em] border-solid border-borderLight dark:border-borderDark' src={country?.flags.png} alt={country?.name} width={100} height={100} />
+                <Image className='w-full h-full md:rounded-xl md:border-[1.5em] border-solid border-borderLight dark:border-borderDark' src={country?.flags.png} alt={country?.name} width={100} height={100} priority />
               </div>
               <div className='w-full md:flex-[1_1_50%] lg:flex-[1_1_55%]'>
                 <div>
@@ -70,22 +72,30 @@ const CountryDetail = (props) => {
                   <div className='xs-only:mt-8'>
                     <div>
                       <span className='font-nunito600'>Top Level Domain: </span>
-                      {country?.topLevelDomain?.map(domain => <span key={domain}>{domain}</span>)}
+                      {country?.topLevelDomain?.map((domain) => <span key={domain}>{domain}</span>)}
                     </div>
                     <div>
                       <span className='font-nunito600'>Currencies: </span>
-                      {country?.currencies?.map(currency => <span key={currency?.name}>{currency?.name}</span>)}
+                      {country?.currencies?.map((currency) => <span key={currency?.name}>{currency?.name}</span>)}
                     </div>
                     <div>
                       <span className='font-nunito600'>Languages: </span>
-                      {country?.languages?.map(lang => <span key={lang?.name}>{lang?.name}, </span>)}
+                      {country?.languages?.map((lang) => <span key={lang?.name}>{lang?.name}, </span>)}
                     </div>
                   </div>
                 </div>
                 <div className='flex flex-col md:flex-row md:items-center xs-only:gap-3 xs-only:mt-7 xs-only:mb-12 md:mt-14'>
                   <span className='font-nunito600 xs-only:text-xl whitespace-nowrap'>Border Countries: </span>
                   <div>
-                    {country?.borders?.map(border => <span key={border} className={`py-1 px-8 rounded border-4 border-solid xs-only:mr-3 md:mx-3 ${countriesBorderDarkMode}`}>{border}</span>)}
+                    {country?.borders?.map((border) =>
+                      <span
+                        key={border}
+                        onClick={() => router.push(`/${border}`)}
+                        className={`py-1 px-8 rounded cursor-pointer border-4 border-solid xs-only:mr-3 md:mx-1 ${countriesBorderDarkMode}`}
+                      >
+                        {border}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
