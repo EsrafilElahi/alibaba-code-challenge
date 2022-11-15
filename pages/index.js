@@ -69,6 +69,7 @@ const Home = (props) => {
     keys: ['name']
   }
 
+
   const fuse = new Fuse(countries, fuseOptions)
 
   const searchCountries = (searchValue) => {
@@ -76,9 +77,9 @@ const Home = (props) => {
 
 
     if (search) {
-      const filtered = fuse.search(search)
+      const filtered = fuse.search(searchValue)
       const founded = []
-      filtered?.map(item => rest.push(item.item))
+      filtered?.map(obj => founded.push(obj.item))
 
       setFilteredCountries(founded)
     } else {
