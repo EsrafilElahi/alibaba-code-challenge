@@ -143,9 +143,9 @@ const Home = (props) => {
             (
               <div className='flex justify-center items-center flex-wrap gap-24 px-7 md:px-20 pb-8'>
                 {
-                  orderedData?.map(country => (
+                  orderedData?.map((country, i) => (
                     <Suspense
-                      key={country.id}
+                      key={country.alpha3Code}
                       fallback={`Loading...`}
                     >
                       <CountryItem country={country} />
