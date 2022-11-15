@@ -100,7 +100,7 @@ const Home = (props) => {
 
   return (
     <div className={`w-full h-full text-base ${handleContainerDarkMode}`}>
-      <div className="py-10 px-7 md:px-20">
+      <div className="py-20 px-7 md:px-20">
         <div className='flex flex-col md:flex-row gap-10 md:gap-0 justify-between'>
           <FilterSearch
             search={search}
